@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // ()=> {}
+            const show = (x) => {
+                return x * 2
+            }
+            // 糖2: 函数体中只有1行代码时,可以省略{return}
+            const show2 = (x) => x * 2
+
+            const show4 = (x, y) => x + y
+
+            // 坑: 如果返回值时对象类型,其{}会被错误的识别为函数的{}
+            // 用 () 包围, 来解决冲突
+            const show3 = (x, y) => ({
+                x: x,
+                y: y,
+            })
+            // {属性名:值},如果只是变量,恰好 变量名和变量值一样,则可以合并为 {x:x} -> {x}
+            const show5 = (x, y) => ({ x, y })
+        </script>
+    </body>
+</html>

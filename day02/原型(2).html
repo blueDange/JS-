@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // 制作一个圆形 Circle 构造函数
+            function Circle(r) {
+                var x = {}
+                x.r = r
+                x.__proto__ = Circle.prototype
+                return x
+            }
+            Circle.prototype.dia = function () {
+                return this.r * 2
+            }
+            Circle.prototype.area = function () {
+                return 3.14 * this.r * this.r
+            }
+            Circle.prototype.zc = function () {
+                return Math.PI * this.r * 2
+            }
+            var c1 = Circle(5) // 半径
+            console.log(c1)
+            console.log(c1.dia())
+            console.log(c1.area())
+            console.log(c1.zc())
+        </script>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>练习</title>
+    </head>
+    <body>
+        <script>
+            var nums = [13, 1, 5, 12, 5122, 123, 521, 56, 36, 85, 33]
+            // 1.求和
+            let sum = 0
+            // forEach
+            nums.forEach((element) => {
+                sum += element
+            })
+
+            // for of
+            let add = 0
+            for (const val of nums) {
+                add += val
+            }
+            console.log(sum)
+            console.log(add)
+        </script>
+    </body>
+</html>

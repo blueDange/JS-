@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- call: 函数的一个属性,提供了短暂访问对象的功能
+    把函数放到参数对象里,运行一次,再删除
+    语法: 函数.call(对象) -->
+        <script>
+            var r1 = {
+                length: 10,
+                width: 20,
+            }
+            function area() {
+                console.log(this.width * this.length)
+            }
+            // 复杂方案
+            r1.area = area // 存入对象
+            r1.area() // 调用
+            delete r1.area // 清理
+
+            // 函数call放发
+            area.call(r1)
+
+            ////////////
+            var emp = {
+                ename: '小黑子',
+                salary: 20000,
+            }
+            function total(yue) {
+                console.log(this.salary * yue)
+            }
+            total.call(emp, 12)
+
+            // 计算 n月薪资 + 奖金
+            function bonus(yue, bonus) {
+                console.log(this.salary * yue + bonus)
+            }
+            // 计算出: 6个月总薪资+40000奖金
+            bonus.call(emp, 6, 40000)
+        </script>
+    </body>
+</html>

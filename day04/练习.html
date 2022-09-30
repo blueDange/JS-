@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            var food = [
+                { name: '葡萄', price: 8, count: 6, checked: true },
+                { name: '橙子', price: 10, count: 11, checked: true },
+                { name: '柚子', price: 12, count: 52, checked: false },
+                { name: '哈密瓜', price: 29, count: 24, checked: false },
+                { name: '菠萝', price: 13, count: 14, checked: true },
+                { name: '蓝莓', price: 22, count: 20, checked: false },
+            ]
+
+            // 计算所有商品的总价格
+            let sum = 0
+            food.forEach((val) => {
+                sum += val.price * val.count
+            })
+            console.log(sum)
+            //////
+            let add = 0
+            for (const val of food) {
+                add += val.price * val.count
+                // console.log(val)
+            }
+            console.log(add)
+
+            // 计算出为真的商品总和
+            let sum2 = 0
+            food.forEach((val) => {
+                sum2 += val.price * val.count * val.checked
+            })
+            console.log(sum2)
+        </script>
+    </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Map</title>
+    </head>
+    <body>
+        <ul id="box"></ul>
+        <div id="box1"></div>
+        <div id="box2"></div>
+        <div id="box3">
+            <a href=""></a>
+        </div>
+        <script>
+            // map: 把数组中的每个元素,修改之后,组合成新的数组
+            var nums = [12, 13, 5, 2, 6, 13, 61, 21]
+
+            // 把每个数字 * 2
+            var x = nums.map((value, index, array) => {
+                return value * 2
+            })
+            console.log(x)
+
+            // 练习
+            var names = ['泡泡', '明明', '凉凉']
+
+            // 每个元素放到li标签里 <li>xx</li>
+            var x = names.map((value) => `<li>${value}</li>`)
+            console.log(x)
+            box.innerHTML = x.join('')
+
+            /////////
+            var skill = ['css', 'java', 'html', 'express']
+            // 数据转为按钮 <button>xxx</button>  放入box1
+            var m = skill.map(
+                (val) => `<button>
+                ${val}</button>`
+            )
+            box1.innerHTML = m.join('')
+
+            //////////////
+            var imgs = [
+                'https://web.codeboy.com/xuezi/img/index/banner1.png',
+                'https://web.codeboy.com/xuezi/img/index/banner1.png',
+                'https://web.codeboy.com/xuezi/img/index/banner1.png',
+            ]
+            var x = imgs.map((v) => `<img src="${v}" alt="">`)
+            box2.innerHTML = x.join('')
+
+            /////////////
+            var webs = [
+                { title: '新闻', href: 'http://news.baidu.com/' },
+                { title: 'hao123', href: 'http://hao123.com/' },
+                { title: '地图', href: 'http://map.baidu.com/' },
+                { title: '贴吧', href: 'http://tieba.com/' },
+            ]
+            var x = webs.map((s) => `<a href="${s.href}"> ${s.title}</a>`)
+            box3.innerHTML = x.join('')
+        </script>
+    </body>
+</html>

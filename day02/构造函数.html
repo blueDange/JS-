@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // 构造函数: 用于 构建创造 对象的函数, 称为构造函数
+            // 所有的数据本质都是构造函数创建的,只是作者为常用数据设置了语法糖 -- 称为 字面量语法
+            var obj = {}
+            console.log(obj)
+            var x = new Object()
+            console.log(x)
+            var a = [11, 22, 33]
+            var b = new Array(11, 22, 33)
+            function c(x, y) {
+                console.log(x + y)
+            }
+            c(10, 20)
+
+            // 构造语法
+            var d = new Function('x', 'y', 'console.log(x + y)')
+            d(10, 20)
+            console.dir(d)
+        </script>
+    </body>
+</html>

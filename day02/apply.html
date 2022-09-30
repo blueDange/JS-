@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            var r1 = {
+                length: 20,
+                width: 10,
+            }
+            function area() {
+                console.log(this.length * this.width)
+            }
+            area.call(r1)
+            area.apply(r1)
+
+            // 体积
+            function volume(height) {
+                console.log(this.length * this.width * height)
+            }
+            // 计算高度为100的体积
+            volume.call(r1, 100)
+            volume.apply(r1, [100])
+            // 区别
+            // call: 实参 '散装的' 要一个一个传递
+            // apply: 实参 '打包的' 用在一个数组一起传递
+
+            // 练习
+            function suibian(x, y) {
+                console.log(this.length * this.width + x + y)
+            }
+            suibian.call(r1, 200, 300)
+            suibian.apply(r1, [200, 300])
+        </script>
+    </body>
+</html>

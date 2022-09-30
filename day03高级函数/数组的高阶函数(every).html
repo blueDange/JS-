@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>every</title>
+    </head>
+    <body>
+        <script>
+            // 通过AJAX从服务器获取数据,获取的数据都是通过数据库查询到的,基本都是数组类型
+            // 把数组转为HTML 输入日常操作
+
+            // 高阶函数: 函数中使用了其他函数,就叫高阶函数
+
+            // every:
+            console.log(Array.prototype)
+            var nums = [12, 213, 41, 51, 642, 623, 67, 23, -627, 234]
+            // 判断数组里每个元素是否都是正数
+            //                    值     序号    数组
+            var x = nums.every((value, index, array) => {
+                console.log(`当前检测:${value},序号:${index},来自:${array}`)
+                // 返回结果: true代表通过 false代表不通过
+                // return true // 通过: 就会继续检测下一个
+                if (value > 0) {
+                    return true
+                } else {
+                    return false
+                }
+            })
+            console.log('x', x) // 只要有一个元素不通过,整个验证是假
+            console.log(x ? '都是正数' : '有非正数')
+        </script>
+    </body>
+</html>

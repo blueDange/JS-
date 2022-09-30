@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>静态属性语法</title>
+    </head>
+    <body>
+        <script>
+            // 创建对象的两种方式
+            // 1.构造方式: 先制作一个构造函数,在通过构造函数来创建对象  -- 适合重复使用
+            // 2.直接书写对象类型 -- 适合一次性
+            var emp = { ename: '泡泡', age: 18 }
+            console.log(emp.ename, emp.age)
+
+            // class语法中制作不需要new 就能用的对象: 静态属性
+            class Emp1 {
+                // static: 静态 - 直接存储在类中,能直接 类名 : 属性名
+                static name = '小黑子'
+                static age = 19
+            }
+            console.log(Emp1.age)
+            console.log(Emp1.name)
+            console.dir(Emp1)
+        </script>
+    </body>
+</html>

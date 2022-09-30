@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>reduce 数组合并</title>
+    </head>
+    <body>
+        <script>
+            // reduce 数组合并
+            var nums = [12, 13, 51, 23, 56, 34, 78, 65]
+            var sum = 0
+            nums.forEach((val) => {
+                return (sum += val)
+            })
+            console.log(sum)
+
+            ////////////// reduce
+            // 参数1: 函数
+            // 参数2: 0 代表sum初始值,不写默认为第一个元素的值
+            var x = nums.reduce((sum, n) => {
+                return sum + n
+            }, 0)
+            console.log(x)
+        </script>
+    </body>
+</html>

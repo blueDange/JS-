@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>every2</title>
+    </head>
+    <body>
+        <script>
+            var nums = [12, 124, 500, 112, 150, 60, 472, 742, 856, 833]
+
+            // 判断是否每个元素都大于60
+            var x = nums.every((value, index, array) => {
+                // console.log(`当前检测:${value},序号:${index},来自:${array}`)
+
+                if (value > 60) {
+                    return true
+                } else {
+                    return false
+                }
+            })
+
+            // 简写  没用的形参,省略不写 -- 仅限最后面的
+            var x = nums.every((value) => value > 60)
+
+            console.log('x', x)
+            console.log(x ? '都大于60' : '有不大于60的')
+
+            // 判断数组中是否都为偶数
+            var m = nums.every((val) => val % 2 == 0)
+            console.log(m ? '都是偶数' : '有不是偶数的')
+        </script>
+    </body>
+</html>

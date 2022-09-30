@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>自定义构造函数</title>
+    </head>
+    <body>
+        <script>
+            // 构造函数相当于是一个工厂,可以生产产品
+
+            // 制作换一个函数Rect,触发后可以生成 矩形对象
+            function Rect(width, length) {
+                var x = {}
+                x.width = width
+                x.length = length
+                return x
+            }
+            var r1 = Rect(10, 20)
+            console.log('r1', r1)
+
+            // 练习
+            function Cube(length, width, height) {
+                var m = {}
+                m.length = length
+                m.width = width
+                m.height = height
+                return m
+                // 给x对象设置共享对象在哪里
+                // __poroto__:固定的关键词
+                m.__proto__ = Cube.prototype
+            }
+
+            var c1 = Cube(10, 20, 30)
+            console.dir(Cube)
+
+            // function Cube(length, width, height) {
+            //     this.length = length
+            //     this.width = width
+            //     this.height = height
+            // }
+            // 计算体积
+            // 所有的函数都有一个prototype属性,用于存放共享发发
+            Cube.prototype.volume = function () {
+                return this.width * this.length * this.length
+            }
+            // 构造函数不允许生产三无产品
+            // 必须为生产的对象,通过原型链__proto__属性,指定'售后'由谁负责,够赞函数的prototype 原型属性
+            // 原型链机制: 当对象读取一个属性时,如果本身没有,则自动到原型链 链接道德 对象中查找
+        </script>
+    </body>
+</html>

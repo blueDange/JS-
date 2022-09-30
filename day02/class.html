@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Class</title>
+    </head>
+    <body>
+        <script>
+            // 由于js的构造函数写法过于复杂
+            // 在2015年6月 es6
+            // 引入来自java的class语法: 全自动完成原型的操作
+            // class: 称为 类
+            class Rect {
+                // 固定名称的函数 constructor
+                // 相当于之前的够赞函数,通过 new 类名() 触发
+                constructor(length, width) {
+                    this.length = length
+                    this.width = width
+                }
+                // 所有书写在这个{}中的函数,都会放在原型中
+                // 省略funciotn关键字
+                area() {
+                    return this.width * this.length
+                }
+                zc() {
+                    return (this.length + this.width) * 2
+                }
+            }
+            var r1 = new Rect(10, 20)
+            console.log(r1)
+            console.log(r1.area())
+            console.log(r1.zc())
+
+            console.dir(Rect)
+        </script>
+    </body>
+</html>

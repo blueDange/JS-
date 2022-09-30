@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>es6特性--作用域</title>
+    </head>
+    <body>
+        <script>
+            // 新增两个作用域  :脚本作用域 和 块级作用域
+
+            var a = 10
+            // 存储在脚本作用域, -- 必须利用断点才能看见
+            // let 不能重复声明
+            let b = 20
+            var a = 30
+            console.log(window)
+        </script>
+    </body>
+</html>

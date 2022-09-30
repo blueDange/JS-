@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            var emps = [
+                { name: '爆爆1', married: false, age: 25 },
+                { name: '爆爆2', married: true, age: 20 },
+                { name: '爆爆3', married: false, age: 16 },
+                { name: '爆爆4', married: true, age: 18 },
+                { name: '爆爆5', married: false, age: 35 },
+                { name: '爆爆6', married: true, age: 45 },
+            ]
+            // 1.判断是否每个人都已婚
+            var x = emps.every((emp) => emp.married)
+            console.log(x ? '都已婚' : '非都已婚')
+
+            // 2.判断是否每个人都大于20岁
+            var x = emps.every((emp) => emp.married)
+            console.log(x ? '都大于20' : '非都大于20')
+
+            var salarys = [
+                { name: '爆爆1', gz: 9000 },
+                { name: '爆爆2', gz: 10000 },
+                { name: '爆爆3', gz: 20000 },
+                { name: '爆爆4', gz: 3000 },
+                { name: '爆爆5', gz: 22312 },
+                { name: '爆爆6', gz: 12311 },
+            ]
+            var x = salarys.some((salary) => salary.gz < 10000)
+            console.log(x ? '存在' : '不存在')
+        </script>
+    </body>
+</html>

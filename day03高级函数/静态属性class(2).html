@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>继承</title>
+    </head>
+    <body>
+        <script>
+            // 面向对象的三大特征: 封装继承多态
+            // 封装: 用{}把很多代码括起来,起个名字,复用
+            // 继承: 子类可以继承父类的所有属性,为类提供了丰富的可扩展性   -- 一代更比一代强
+            // 多态: 子类通过重写,可以让同样的方法名出现不同状态的表现
+            class Father {
+                constructor(name, money) {
+                    this.name = name
+                    this.money = money
+                }
+                eat() {
+                    console.log('爱吃胡萝卜爱吃菜')
+                }
+            }
+            // extends: 继承;代表Son继承了Father 所有内容
+            class Son extends Father {
+                // 重写,对父传递的方法,可以重写
+                eat() {
+                    super.eat() // super: 代表父,调用父的eat
+                    console.log('两只耳朵竖起来')
+                }
+                play() {
+                    console.log('唱,跳,rap,篮球')
+                }
+            }
+            var s1 = new Son('小亮', 500)
+            console.dir(s1)
+            s1.eat()
+            s1.play()
+        </script>
+    </body>
+</html>

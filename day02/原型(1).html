@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // 制作Rect函数,制作矩形对象,要求拥有计算面积和周长的方法
+            function Rect(width, length) {
+                var x = {}
+                x.width = width
+                x.length = length
+                x.__proto__ = Rect.prototype
+                return x
+            }
+            Rect.prototype.area = function () {
+                return this.width * this.length
+            }
+            Rect.prototype.zc = function () {
+                return (this.width + this.length) * 2
+            }
+            var r1 = Rect(20, 50)
+            console.log(r1)
+            console.log(r1.area())
+            console.log(r1.zc())
+        </script>
+    </body>
+</html>

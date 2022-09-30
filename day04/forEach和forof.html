@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // forEach: 是数组专属的方法,只有数组也能用
+            // for...of: 是通用方法,维数组也能用
+            function show() {
+                console.log(arguments)
+                // 典型的维数组: 原型非数组 Array
+                // arguments.forEach(element => {
+
+                // });  // 会报错
+                for (const val of arguments) {
+                    console.log(val)
+                }
+            }
+            show(22, 12, 42, 56, 77, 78, 900)
+        </script>
+    </body>
+</html>

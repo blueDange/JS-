@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>电影</title>
+        <!-- 接触图片防盗 -->
+        <meta name="referrer" content="no-referrer" />
+        <style>
+            #box {
+                max-width: 1610px;
+                margin: 0 auto;
+            }
+            #box > div {
+                display: inline-flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 5px;
+                /* flex-wrap: wrap; */
+                /* margin: 8px; */
+                margin: 0 auto;
+            }
+            #box > div > img {
+                width: 200px;
+                height: 250px;
+            }
+            #box > div > span {
+                width: 180px;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box">
+            <!-- <div>
+                <img
+                    src="https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2678252154.jpg"
+                    alt=""
+                />
+                <span>王牌飞行员</span>
+            </div> -->
+        </div>
+        <script src=".././js/request.js"></script>
+        <script>
+            const url = 'https://api.xin88.top/douban/movies.json'
+            get(url, (data) => {
+                console.log(data)
+                box.innerHTML = data.subjects
+                    .map((item) => {
+                        return `<div>
+                    <img
+                        src="${item.cover}"
+                        alt=""
+                    />
+                    <span>${item.title}</span>
+                </div>`
+                    })
+                    .join('')
+            })
+        </script>
+    </body>
+</html>

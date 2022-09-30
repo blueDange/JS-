@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            const h1 = new Hero('孙尚香', '翻滚突袭', '红联保单')
+            function Hero(name, skill_1, skill_2) {
+                // new: 此关键词放在函数前,则会自动生成三行代码
+                // var this = {}
+                this.name = name
+                this.skill_2 = skill_2
+                this.skill_1 = skill_1
+
+                // this.__proto__ = Hero.prototype
+                // return x
+            }
+            Hero.prototype.s1 = function () {
+                console.log(this.name + '释放' + this.skill_1)
+            }
+            Hero.prototype.s2 = function () {
+                console.log(this.name + '释放' + this.skill_2)
+            }
+            console.log(h1)
+            // {name:"孙尚香", skill_1:"翻滚突袭",skill_2:"红联保单"}
+
+            h1.s1() // 打印出: 孙尚香 释放 翻滚突袭
+            h1.s2() // 打印出: 孙尚香 释放 红莲保单
+        </script>
+    </body>
+</html>
