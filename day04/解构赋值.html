@@ -20,6 +20,19 @@
             var n = 20
             ;[m, n] = [n, m]
             console.log(m, n)
+
+            ////////////////
+            // 对象结构
+            var emp = {
+                ename: '神里',
+                age: 19,
+                phone: '13512351232',
+                boyFriend: '大脸',
+            }
+            // var bf = emp.boyFriend
+            // 别名语法{属性名:别名}
+            var { ename, age, phone, boyFriend: bf } = emp
+            console.log(ename, age, phone, bf)
         </script>
     </body>
 </html>
