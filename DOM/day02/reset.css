@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+img {
+    display: block;
+}
+html {
+    font-size: 16px;
+    color: #333;
+}
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+body {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style: none;
+}
+button,
+input[type='text'] {
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+table {
+    border-collapse: collapse;
+}

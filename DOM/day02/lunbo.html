@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>初级轮播图</title>
+        <link rel="stylesheet" href="./reset.css" />
+        <style>
+            #banner {
+                position: relative;
+                width: 700px;
+                height: 280px;
+                overflow: hidden;
+            }
+            #banner > div {
+                display: flex;
+                position: relative;
+                left: 0;
+                transition: 0.4s;
+            }
+            #banner > div > img {
+                width: 700px;
+            }
+            #banner > ul {
+                display: flex;
+                position: absolute;
+                bottom: 10px;
+                justify-content: center;
+                width: 100%;
+            }
+            #banner > ul > li {
+                width: 14px;
+                height: 14px;
+                background-color: #fff;
+                margin: 0 3px;
+                border-radius: 50%;
+            }
+            #banner > ul > li.circle {
+                background-color: #0ca4ec;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="banner">
+            <div>
+                <img src="./imgs/banner1.png" alt="" />
+                <img src="./imgs/banner2.png" alt="" />
+                <img src="./imgs/banner3.png" alt="" />
+                <img src="./imgs/banner4.png" alt="" />
+            </div>
+            <ul>
+                <li class="circle"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <script>
+            const ul = document.querySelector('#banner ul')
+            const lis = ul.querySelectorAll('li')
+            lis.forEach(
+                (li) =>
+                    (li.onmouseenter = function () {
+                        lis.forEach((del) => del.classList.remove('circle'))
+                        this.classList.add('circle')
+
+                        // 获得小圆点的序号,计算偏移量
+                        // const all = this.parentElement.children
+                        // console.log(all)
+                        // console.log(lis)
+                        // 利用for循环,找到带有active样式的元素序号
+                        for (let i = 0; i < lis.length; i++) {
+                            if (lis[i].classList.contains('circle')) {
+                                // previous: 上一个 Element:元素  Sibling: 兄弟
+                                console.log(i)
+                                const div =
+                                    this.parentElement.previousElementSibling
+                                console.log(div)
+                                div.style.left = `-${i}00%`
+                                // contains: 判断是否包含指定样式,返回false,true
+                                break
+                            }
+                        }
+                    })
+            )
+        </script>
+    </body>
+</html>

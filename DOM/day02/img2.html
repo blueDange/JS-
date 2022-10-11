@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="./reset.css" />
+        <style>
+            #box {
+                width: 1000px;
+                position: relative;
+            }
+            #box > img {
+                width: 100%;
+            }
+            #box > ul {
+                display: flex;
+                position: absolute;
+                right: 10px;
+                bottom: 10px;
+            }
+            #box li {
+                color: white;
+                margin-left: 10px;
+                font-size: 0.85rem;
+                text-align: right;
+            }
+            #box li > img {
+                border: 4px solid #7a7a7a;
+                border-radius: 0 15px;
+            }
+            #box li.active > img {
+                border-color: #f3c258;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box">
+            <img src="./imgs/bigskin-5.jpg" alt="" />
+            <ul>
+                <li class="active">
+                    <img src="./imgs/smallskin-5.jpg" alt="" />
+                    <span>时之愿镜</span>
+                </li>
+                <li>
+                    <img src="./imgs/smallskin-4.jpg" alt="" />
+                    <span>时之祈愿</span>
+                </li>
+                <li>
+                    <img src="./imgs/smallskin-3.jpg" alt="" />
+                    <span>遇见神鹿</span>
+                </li>
+                <li>
+                    <img src="./imgs/smallskin-2.jpg" alt="" />
+                    <span>森&emsp;</span>
+                </li>
+                <li>
+                    <img src="./imgs/smallskin-1.jpg" alt="" />
+                    <span>鹿灵收心</span>
+                </li>
+            </ul>
+        </div>
+        <script>
+            const lis = document.querySelectorAll('#box>ul>li')
+            // 做法1: 筹备数组,按顺序存放大图
+            const imgs = [
+                './imgs/bigskin-5.jpg',
+                './imgs/bigskin-4.jpg',
+                './imgs/bigskin-3.jpg',
+                './imgs/bigskin-2.jpg',
+                './imgs/bigskin-1.jpg',
+            ]
+            lis.forEach((element) => {
+                element.onmouseover = function () {
+                    lis.forEach((val) => val.classList.remove('active'))
+                    this.classList.add('active')
+                    // 激活项目的序号
+                    // indexOf 方法  '短暂访问' 放入all中使用
+                    // lis 是一个伪数组,所以要去Array去借
+                    // 相当于 lis.indexOf(this)
+                    const i = Array.prototype.indexOf.call(lis, this)
+                    // console.log('i:', i)
+
+                    const img_big = this.parentElement.previousElementSibling
+                    // 利用序号,读取到对象的大图地址,赋值给 大图 img 标签
+                    img_big.src = imgs[i]
+                }
+            })
+        </script>
+    </body>
+</html>

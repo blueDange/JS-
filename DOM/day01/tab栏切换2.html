@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            ul,
+            li {
+                display: block;
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                user-select: none;
+                width: 110px;
+                text-align: center;
+            }
+        </style>
+        <link rel="stylesheet" href="./reset.css" />
+    </head>
+    <body>
+        <ul>
+            <li class="current">个人信息</li>
+            <li>我的订单</li>
+            <li>收货地址</li>
+            <li>我的购物车</li>
+            <li>账户安全</li>
+            <li>退出</li>
+        </ul>
+        <script>
+            var lis = document.querySelectorAll('li')
+            lis.forEach((element) => {
+                element.onclick = function () {
+                    const cut = document.querySelector('.current')
+                    cut.classList.remove('current')
+                    this.classList.add('current')
+                }
+            })
+        </script>
+    </body>
+</html>

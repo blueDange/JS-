@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <input type="text" placeholder="菜谱名,食材名" name="" id="" />
+        <ul></ul>
+        <script>
+            // 任务,在输入框中按回车,读取输入框里的值,然后发请求获取数据
+            const inp = document.querySelector('input')
+            const ul = document.querySelector('ul')
+            inp.onkeyup = function (e) {
+                if (e.keyCode === 13) {
+                    console.log('搜索', this.value)
+                    const url = ` https://serverms.xin88.top/mall/search?type=1&kw=${this.value}&page=1`
+                    const xhr = new XMLHttpRequest()
+                    xhr.open('GET', url)
+                    xhr.onload = function () {
+                        const data = JSON.parse(xhr.response)
+                        console.log(data)
+                        ul.innerHTML = data.data
+                            .map((item) => {
+                                return `<li>${item.name}</li>`
+                            })
+                            .join('')
+                    }
+                    xhr.send()
+                }
+            }
+        </script>
+    </body>
+</html>

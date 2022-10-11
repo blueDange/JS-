@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            #box div {
+                width: 400px;
+                margin-bottom: 5px;
+                height: 50px;
+                transition: 0.3s;
+                background-size: cover;
+                border-radius: 4px;
+            }
+            #box div.current {
+                height: 184px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box">
+            <div style="background-image: url('./imgs/bigskin-1.jpg')"></div>
+            <div style="background-image: url('./imgs/bigskin-2.jpg')"></div>
+            <div style="background-image: url('./imgs/bigskin-3.jpg')"></div>
+            <div style="background-image: url('./imgs/bigskin-4.jpg')"></div>
+            <div style="background-image: url('./imgs/bigskin-5.jpg')"></div>
+            <!-- <img src="./imgs/bigskin-1.jpg" alt="" />
+            <img src="./imgs/bigskin-2.jpg" alt="" />
+            <img src="./imgs/bigskin-3.jpg" alt="" />
+            <img src="./imgs/bigskin-4.jpg" alt="" />
+            <img src="./imgs/bigskin-5.jpg" alt="" /> -->
+        </div>
+        <script>
+            const imgs = document.querySelectorAll('#box div')
+            imgs.forEach((element) => {
+                element.onclick = function () {
+                    imgs.forEach((val) => {
+                        val.classList.remove('current')
+                    })
+                    this.classList.add('current')
+                }
+            })
+        </script>
+    </body>
+</html>

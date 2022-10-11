@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>事件委托</title>
+        <link rel="stylesheet" href="reset.css" />
+        <style>
+            li {
+                padding: 10px;
+                user-select: none;
+            }
+            .active {
+                background-color: orange;
+            }
+            p {
+                user-select: none;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 
+            事件委托: 子元素把事件的处理操作,委托给父元素
+        
+        -->
+        <ul>
+            <li>神里</li>
+            <li>申鹤</li>
+            <li>莫娜</li>
+            <p>钟离</p>
+            <li>胡桃</li>
+            <p>达达利亚</p>
+            <li>优菈</li>
+        </ul>
+        <script>
+            // const lis = document.querySelectorAll('ul>li')
+            // lis.forEach(
+            //     (li) =>
+            //         (li.onclick = function () {
+            //             this.classList.add('active')
+            //         })
+            // )
+            const ul = document.querySelector('ul')
+            ul.onclick = function (e) {
+                console.log('ul clicked', e.target)
+                // 注意: 委托模式下,所有元素及自身都会触发事件,必须利用判断,选择对那些元素进行操作
+                // 判断标签名是 li,再激活,过滤掉不是li的元素
+                if (e.target.tagName == 'LI') {
+                    e.target.classList.add('active')
+                }
+            }
+        </script>
+    </body>
+</html>

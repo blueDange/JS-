@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>图片</title>
+        <link rel="stylesheet" href="./reset.css" />
+        <style>
+            #box > div {
+                display: flex;
+            }
+            #box > div > img.active {
+                border: 2px solid gray;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box">
+            <img src="./imgs/1_lg.jpg" alt="" />
+            <div class="active">
+                <img src="./imgs/1_sm.jpg" class="active" alt="" />
+                <img src="./imgs/2_sm.jpg" alt="" />
+                <img src="./imgs/3_sm.jpg" alt="" />
+                <img src="./imgs/4_sm.jpg" alt="" />
+                <img src="./imgs/5_sm.jpg" alt="" />
+            </div>
+        </div>
+        <script>
+            const imgs = document.querySelectorAll('#box>div>img')
+            const img = [
+                './imgs/1_lg.jpg',
+                './imgs/2_lg.jpg',
+                './imgs/3_lg.jpg',
+                './imgs/4_lg.jpg',
+                './imgs/5_lg.jpg',
+            ]
+            imgs.forEach(
+                (val) =>
+                    (val.onmouseover = function () {
+                        imgs.forEach((val) => val.classList.remove('active'))
+                        this.classList.add('active')
+                        var i = Array.prototype.indexOf.call(imgs, this)
+                        const img_big =
+                            this.parentElement.previousElementSibling
+                        img_big.src = img[i]
+                    })
+            )
+        </script>
+    </body>
+</html>

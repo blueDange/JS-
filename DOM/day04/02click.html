@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <ul>
+            <li>神里</li>
+            <li>申鹤</li>
+            <li>胡桃</li>
+        </ul>
+
+        <script src="./jQuery/jquery-3.6.1.min.js"></script>
+
+        <script>
+            // 自动遍历,为每个元素绑定click事件
+            $('li').click(function () {
+                console.log(this)
+                // 原生
+                this.style.color = 'red'
+                //JQ
+                console.log($(this))
+                $(this).css('border', '2px solid skyblue')
+            })
+        </script>
+    </body>
+</html>

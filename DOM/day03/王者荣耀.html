@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>王者荣耀</title>
+        <link rel="stylesheet" href="./reset.css" />
+        <style>
+            #box {
+                cursor: pointer;
+                width: 604px;
+                overflow: hidden;
+            }
+            #box > ul {
+                display: flex;
+                background-color: black;
+            }
+            #box > ul > li {
+                flex: 1;
+                /* 每个元素都占1 */
+                color: #acaebb;
+                padding: 10px 0;
+                text-align: center;
+                user-select: none;
+            }
+            #box > ul > li.circle {
+                background-color: #262626;
+                color: #e5bb54;
+            }
+            #box > div {
+                display: flex;
+                transition: 0.2s;
+                position: relative;
+                left: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box">
+            <div>
+                <img src="./img/111.jpeg" alt="" />
+                <img src="./img/222.jpeg" alt="" />
+                <img src="./img/333.jpeg" alt="" />
+                <img src="./img/444.jpeg" alt="" />
+                <img src="./img/555.jpeg" alt="" />
+            </div>
+            <ul>
+                <li class="circle">世界冠军杯</li>
+                <li>皮肤创作前瞻</li>
+                <li>云中专线</li>
+                <li>奕星滕王阁序</li>
+                <li>峡谷搞事团</li>
+            </ul>
+        </div>
+        <script>
+            const lis = document.querySelectorAll('#box>ul>li')
+            lis.forEach(
+                (li) =>
+                    // li.addEventListener('click', function () {
+                    //     lis.forEach((del) => del.classList.remove('circle'))
+                    //     this.classList.add('circle')
+                    // })
+
+                    (li.onmouseover = function () {
+                        lis.forEach((del) => del.classList.remove('circle'))
+                        this.classList.add('circle')
+                        const index = Array.prototype.indexOf.call(lis, this)
+                        const div = this.parentElement.previousElementSibling
+                        console.log(index)
+                        div.style.left = `-${index}00%`
+                    })
+            )
+        </script>
+    </body>
+</html>

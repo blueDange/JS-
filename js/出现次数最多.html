@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            const arr1 = 'dfghqvbjkaskjhqwdsatyfg'
+            let index = arr1.indexOf('a')
+            let num = 0
+            while (index !== -1) {
+                num++
+                index = arr1.indexOf('a', index + 1)
+            }
+            console.log('a出现的次数:' + num)
+
+            const arr2 = 'adqwszcasqwasdqwa'
+            let o = {}
+            for (let i = 0; i < arr2.length; i++) {
+                let chars = arr2.charAt(i)
+                if (o[chars]) {
+                    o[chars]++
+                } else {
+                    o[chars] = 1
+                }
+            }
+            let max = 0
+            let ch = ''
+            for (const key in o) {
+                if (o[key] > max) {
+                    max = o[key]
+                    ch = key
+                }
+            }
+            console.log(max, ch)
+        </script>
+    </body>
+</html>

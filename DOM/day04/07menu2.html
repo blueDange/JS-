@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>侧边栏</title>
+        <link rel="stylesheet" href="./reset.css" />
+        <style>
+            #menu {
+                width: 300px;
+            }
+            #menu > li {
+                padding: 10px;
+                border-bottom: 1px solid #bbb;
+            }
+            #menu > li > div {
+                padding: 10px 0;
+                user-select: none;
+            }
+            #menu > li > ul {
+                margin-left: 20px;
+                display: none;
+            }
+            #menu > li > ul > li {
+                padding: 5px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <ul id="menu">
+            <li>
+                <div>开发</div>
+                <ul>
+                    <li>基于JS开发</li>
+                    <li>基于Java开发</li>
+                </ul>
+            </li>
+            <li>
+                <div>实例教程</div>
+                <ul>
+                    <li>示例代码</li>
+                    <li>Codelabs</li>
+                    <li>视频教程</li>
+                </ul>
+            </li>
+        </ul>
+        <script src="./jQuery/jquery-3.6.1.min.js"></script>
+        <script>
+            $('#menu>li>div').click(function () {
+                // slide: 带有滑动的动画切换
+                // 参数1: 可定制动画时长, 单位毫秒
+                // 多次点击: 动画会排队执行,应该在执行新的动画之前,停止旧的
+                // stop: 用于停止动画
+
+                $(this).next().stop().slideToggle(300)
+            })
+        </script>
+    </body>
+</html>
