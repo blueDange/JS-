@@ -1,0 +1,87 @@
+<!-- 第三方一定要在上方映引入,因为后续的自定义JS文件中会用到,有依赖关系 -->
+<link rel="stylesheet" href="./node_modules/swiper/swiper.min.css">
+<script src="./node_modules/swiper/swiper-bundle.min.js"></script>
+
+<!-- Home -->
+<link rel="stylesheet" href="./pages/home/home.css" />
+<script src="/pages/home/home.js"></script>
+
+<div id="main">
+    <!-- 顶部栏 -->
+    <!-- id ：唯一标识  例如页面上独立的模块 -->
+    <!-- 为了加css 而写的布局  用class -->
+    <div id="topvideo">
+        <div>
+            <div>
+                <h2>今日热门视频菜谱</h2>
+                <a href="?page=video">更多视频菜谱</a>
+            </div>
+            <div class="list">
+                <!-- <div>
+
+                    <video src="./assets/video/11.mp4" poster="./assets/img/index/11.jpg" preload="none"></video>
+                    <i></i>
+                    <span>铁板豆腐</span>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <div id="content">
+        <div id="hot-search">
+            <h2>今日热搜</h2>
+            <div>
+                <a href="">动漫硬化</a>
+            </div>
+        </div>
+
+        <div id="select">
+            <div>
+                <h2>今日三餐</h2>
+                <ul>
+                    <!-- <li class="active">早餐</li>
+                    <li>午餐</li>
+                    <li>下午茶</li>
+                    <li>晚餐</li>
+                    <li>夜宵</li> -->
+                </ul>
+            </div>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <!-- <div class="swiper-slide">
+                        <img src="/assets/img/food/index (1).gif" alt="" />
+                        <b>五彩虾仁炒饭</b>
+                        <span>营养丰富,早饭最爱</span>
+                    </div> -->
+                </div>
+            </div>
+            
+        </div>
+
+        <div id="banner">
+            <img src="./assets/img/index/66.jpg" alt="">
+            <div class="desc">
+                <b>让吃饭变简单</b>
+                <span>msgc.blueDange.ceil</span>
+            </div>
+            <img src="./assets/img/index/55.png" alt="">
+        </div>
+
+        <div id="index-items">
+            <!-- <div class="index-item">
+                <h2>新鲜推荐</h2>
+                <ul>
+                    <li>
+                        <div>
+                            <img src="./assets/img/food/index (25).jpg" alt="">
+                            <span>淘气的开开</span>
+                        </div>
+                        <div>
+                            <b>金鱼小混沌</b>
+                            <span>胡萝卜, 虾仁...</span>
+                        </div>
+                    </li>
+                </ul>
+            </div> -->
+        </div>
+    </div>

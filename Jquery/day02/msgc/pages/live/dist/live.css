@@ -1,0 +1,55 @@
+#container > #main {
+  width: var(--container-width);
+  margin: 0 auto;
+}
+#container > #main > .list {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+#container > #main > .list > .list-items {
+  width: calc((100% - 2 * 10px) / 3);
+  margin-right: 10px;
+}
+#container > #main > .list > .list-items:nth-child(3n) {
+  margin: 0;
+}
+#container > #main > .list > .list-items > div {
+  position: relative;
+  color: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+#container > #main > .list > .list-items > div > img {
+  width: 100%;
+}
+#container > #main > .list > .list-items > div > span:nth-child(2) {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 8px;
+  width: 50%;
+  text-align: end;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+}
+#container > #main > .list > .list-items > div > span:nth-child(3) {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 8px;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+}
+#container > #main > .list > .list-items > span {
+  display: inline-block;
+  padding: 4px;
+  margin-bottom: 10px;
+  color: black;
+}
+#container > #main > #nomore {
+  padding: 30px;
+  text-align: center;
+  font-size: 28px;
+  color: var(--color-primary);
+  display: none;
+}

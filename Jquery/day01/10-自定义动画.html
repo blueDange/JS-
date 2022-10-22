@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义动画</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <button>开始</button>
+    <button>停止</button>
+    <div id="box"></div>
+    <script src="./jQuery/jquery-3.6.1.min.js"></script>
+    <script>
+        const $box = $('#box')
+
+        $('button').eq(0).click(function() {
+            // animate()  动画函数
+            // 参数1: 动画的目标效果
+            $box.animate({
+                top:100,
+                borderRadius: '50%'
+            })
+
+            // 动画队列: 多个动画会排队执行
+            $box.animate({left:200,top:50})
+
+            // 设置时长,参数2: 单位毫秒
+            $box.animate({left: 0, top: 0},2000)
+        })
+
+        // 停止
+        $('button').eq(1).click(function() {
+            // 参数1: 是否清空队列,默认false
+            // 参数2: 是否到当前动画的最终状态 默认false
+            $box.stop(true,true)
+        })
+    </script>
+</body>
+
+</html>

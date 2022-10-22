@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>storage</title>
+</head>
+<body>
+    <script>
+        sessionStorage.setItem('one','1')
+        sessionStorage.setItem('two','2')
+        sessionStorage.setItem('three','3')
+        sessionStorage.setItem('four','4')
+        sessionStorage.setItem('five','5')
+
+        sessionStorage.removeItem('three')
+
+        // 值只允许是字符串, 怎么存储对象类型
+        var emp = {ename:'神里',age: 18,married:true}
+
+        // stringify: 对象转字符串
+        sessionStorage.setItem('emp',JSON.stringify(emp) )
+
+        // 读取时, 需要用json解析成对象
+        var emp1 = sessionStorage.getItem('emp')
+        console.log(JSON.parse(emp1));
+
+        for(let i = 0; i < sessionStorage.length;i++) {
+            let name = sessionStorage.key(i)
+            let val = sessionStorage.getItem(name)
+            console.log(i,name)
+        }
+    </script>
+</body>
+</html>

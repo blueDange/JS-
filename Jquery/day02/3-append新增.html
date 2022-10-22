@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <button>新增</button>
+        <ul>
+            <li>申鹤</li>
+        </ul>
+        <script src="./jQuery/jquery-3.6.1.min.js"></script>
+        <script>
+            $('button').click(function () {
+                // append: 新增   崽子元素末加
+                $('ul').append('<li>出金了</li>')
+            })
+            $('ul').on('click', 'li', function () {
+
+                
+                $(this).css('color', 'skyblue')
+            })
+        </script>
+    </body>
+</html>

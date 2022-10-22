@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>精灵图</title>
+    <style>
+        #box     {
+            background-color: skyblue;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+        #box > i {
+            /* 用像素大厨软件,可以量偏移量 */
+            background: url(../assets/img/979.png);
+            width: 122px;
+            height: 153px;
+            background-position: -48px -64px;
+            /* 默认 i 是航元素,不能设置宽高,要改行内块 */
+            display: inline-block;
+            /* transform: scale(0.3); */
+            /* background-size: 50%; */
+            
+        }
+    </style>
+</head>
+<body>
+    <!-- 性能优化方案:合并请求 -->
+    <!-- 如果项目中使用多个小图标,零散存放则需要发送多次请求 -->
+    <!-- 合并:把小图片合并为精灵图, 仅需一次请求即可 -->
+    <!-- 使用时:通过背景图展示 配合 i 标签 -->
+    <!-- i 标签本意是 italic 代表斜体文字 -->
+    <!-- 大家用 i 当做 icon 图标使用, 配合精灵图 -->
+    <i>hello world</i>
+    <div id="box">
+        <i>hello world</i>
+    </div>
+</body>
+</html>

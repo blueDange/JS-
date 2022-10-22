@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webstorage 存储对象</title>
+</head>
+<body>
+    <!-- 浏览器提供了API 可以吧数据存储在浏览器上 
+        本地存储: localStorage -- 长期存储 ,浏览器关闭后依然在
+        会话存储: sessionStorage  -- 短期存储, 标签关闭后销毁
+    -->
+
+    <input type="text" name="" id="" placeholder="请说你的名字">
+    <button>记录</button>
+    <ul>
+        <li></li>
+        <li></li>
+    </ul>
+    <button id="clear">清空记录</button>
+
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+        $('#clear').on('click',function() {
+            // clear:清空
+            sessionStorage.clear()
+            localStorage.clear()
+
+            location.reload()
+        })
+
+        $('button:contains(记录)').on('click',function() { 
+            const kw = $(this).prev().val()
+
+            sessionStorage.setItem('kw',kw)
+            localStorage.setItem('kw',kw)
+        })
+
+        //查:getItem(属性名) 获取指定属性名中存储的值
+        $('li').eq(0).html(sessionStorage.getItem('kw'))
+        $('li').eq(1).html(localStorage.getItem('kw'))
+
+
+        // 增删改查, 与数据库相似
+
+        // 增: setItem(属性名,值)  -- 都必须是字符串类型
+        // sessionStorage.setItem('suibian','suibian')
+        localStorage.setItem('nihao','你好')
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+#main {
+    width: var(--container-width);
+    margin: 0 auto;
+
+    > #sort {
+        display: flex;
+        margin: 10px 0;
+
+        button {
+            font-size: 18px;
+
+            &.active {
+                color: orange;
+            }
+        }
+    }
+
+    >#content {
+        >ul {
+            >li {
+                display: flex;
+                margin-bottom: 10px;
+                transition: 0.3s;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #eee;
+                }
+
+                >img {
+                    width: 120px;
+                    height: 120px;
+                    border-radius: 8px;
+                    margin-right: 10px;
+                }
+
+                div {
+                    height: 120px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    >b {
+                        color: red;
+                        font-size: 1.3em;
+                    }
+                }
+            }
+        }
+
+        >.pager {
+            margin-bottom: 10px;
+            display: flex;
+
+            button {
+                border: 1px solid #000;
+                border-radius: 3px;
+                padding: 8px 16px;
+                text-align: center;
+                margin: 1px;
+
+                &.active {
+                    
+                    background-color: pink;
+
+                }
+
+                // 不可用样式 如果第一页 上一页就加这个样式,
+                // 如果最后一页,下一页就加这个样式
+                &.disabled {
+                    pointer-events: none;
+                    color: #999;
+                    border-color: #999;
+                }
+            }
+        }
+    }
+
+
+}

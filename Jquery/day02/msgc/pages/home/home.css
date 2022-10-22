@@ -1,0 +1,238 @@
+#main > #topvideo {
+  background-color: #efeeec;
+  padding-bottom: 20px;
+}
+#main > #topvideo > div {
+  width: var(--container-width);
+  margin: 0 auto;
+}
+#main > #topvideo > div > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+#main > #topvideo > div > div:first-child > a {
+  background-image: linear-gradient(to right, #f67436, #f64e36);
+  border-radius: 100px;
+  padding: 5px 15px;
+  color: white;
+  font-weight: bold;
+}
+#main > #topvideo > div > div:first-child > a:hover {
+  background-image: linear-gradient(#eb4b34, #eb4b34);
+}
+#main > #topvideo > div > div:last-child {
+  display: flex;
+  justify-content: space-between;
+}
+#main > #topvideo > div > div:last-child > div {
+  height: 500px;
+  transition: 0.4s;
+  overflow: hidden;
+  border-radius: 4px;
+  cursor: pointer;
+  width: calc((100% - 30px) / 4);
+  position: relative;
+}
+#main > #topvideo > div > div:last-child > div.noactive {
+  width: calc((70% - 30px) / 3);
+}
+#main > #topvideo > div > div:last-child > div.active {
+  width: 30%;
+}
+#main > #topvideo > div > div:last-child > div.active video {
+  filter: blur(0);
+  width: 100%;
+}
+#main > #topvideo > div > div:last-child > div.active i,
+#main > #topvideo > div > div:last-child > div.active span {
+  display: none;
+}
+#main > #topvideo > div > div:last-child > div i {
+  width: 122px;
+  height: 153px;
+  background-image: url("../../assets/img/979.png");
+  background-position: -47px -64px;
+  transform: scale(0.5);
+  position: absolute;
+  left: 30%;
+  top: 30%;
+}
+#main > #topvideo > div > div:last-child > div span {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  font-weight: bold;
+}
+#main > #topvideo > div > div:last-child > div video {
+  width: 360px;
+  transition: 0.4s;
+  filter: blur(1px);
+}
+#main > #content {
+  width: var(--container-width);
+  margin: 0 auto;
+  padding-top: 20px;
+  position: relative;
+}
+#main > #content > #hot-search {
+  width: 800px;
+}
+#main > #content > #hot-search > div {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+#main > #content > #hot-search > div > a {
+  background-color: #f5f5f5;
+  padding: 10px 20px;
+  border-radius: 100px;
+  margin: 0 10px 10px 0;
+}
+#main > #content > #hot-search > div > a.em {
+  background-color: #fee4e1;
+  color: var(--color-primary);
+}
+#main > #content > #select {
+  width: 800px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+#main > #content > #select > div:first-of-type {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+#main > #content > #select > div:first-of-type > ul {
+  display: flex;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+#main > #content > #select > div:first-of-type > ul li {
+  padding: 5px 15px;
+  margin-left: 15px;
+  background-color: #f5f5f5;
+  border-radius: 40px;
+  color: #777;
+  font-weight: bold;
+}
+#main > #content > #select > div:first-of-type > ul li.active {
+  background-image: linear-gradient(to right, #f67237, #f65036);
+  color: #fff;
+}
+#main > #content > #select > .swiper {
+  margin-top: 20px;
+}
+#main > #content > #select > .swiper .swiper-slide {
+  width: calc((100% - 20px) / 3);
+  display: flex;
+  flex-direction: column;
+}
+#main > #content > #select > .swiper .swiper-slide b {
+  margin: 10px 0;
+}
+#main > #content > #select > .swiper .swiper-slide span {
+  color: #777;
+}
+#main > #content > #select > .swiper .swiper-slide img {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#main > #content > #banner {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  width: 280px;
+  height: 470px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+#main > #content > #banner > img:first-of-type {
+  width: 100%;
+  transition: 0.6s;
+}
+#main > #content > #banner .desc {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  width: 100%;
+}
+#main > #content > #banner > img:last-of-type {
+  transform: rotate(45deg);
+  transition: 0.6s;
+  position: absolute;
+  bottom: 100px;
+  right: -200px;
+  width: 200px;
+}
+#main > #content > #banner.active img:first-child {
+  transform: scale(1.1);
+  filter: blur(3px);
+}
+#main > #content > #banner.active img:last-child {
+  right: 0;
+  transform: rotate(0);
+}
+#main > #content > #index-items > .index-item {
+  padding-bottom: 40px;
+}
+#main > #content > #index-items > .index-item > ul {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 0 10px;
+}
+#main > #content > #index-items > .index-item > ul li {
+  cursor: pointer;
+}
+#main > #content > #index-items > .index-item > ul li > div:first-of-type {
+  position: relative;
+  background-color: pink;
+}
+#main > #content > #index-items > .index-item > ul li > div:first-of-type > img {
+  width: 100%;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#main > #content > #index-items > .index-item > ul li > div:first-of-type:hover > span {
+  bottom: 0;
+}
+#main > #content > #index-items > .index-item > ul li > div:first-of-type span {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  background-image: linear-gradient(to right, rgb(39, 37, 37), rgba(158, 149, 149, 0.741));
+  color: red;
+  padding: 8px 0;
+}
+#main > #content > #index-items > .index-item > ul li > div:last-of-type {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+#main > #content > #index-items > .index-item > ul li > div:last-of-type > span {
+  padding-top: 10px;
+  color: #777;
+  font-size: 14px;
+  background-image: url(../../assets/img/453.png);
+  background-position: 0 -50px;
+  background-repeat: no-repeat;
+  background-size: 30px;
+  padding-left: 20px;
+}
+#main > #content > #index-items > .index-item > ul li > div:last-of-type b {
+  font-size: 1.1rem;
+}/*# sourceMappingURL=home.css.map */

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #popup {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 150px;
+            padding: 10px;
+            background-color: #eee;
+        }
+        #dialog {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,.3);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #dialog>div {
+            width: 300px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="popup">
+        <button>关闭</button>
+        <br>
+        萨拉肯德基拉克丝到家了卡时间段里卡机凉快圣诞节埃里克森阿萨拉肯德基埃里克森点击了卡珊德拉卡视角阿萨拉肯德基卢卡斯建档立卡
+    </div>
+
+    <!-- 全局弹窗 -->
+    <div id="dialog">
+        <div>
+            <button>x</button>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro quidem, cumque earum blanditiis eius error magnam totam culpa! Nesciunt, ratione repellendus! Enim totam soluta sunt minus consequatur labore velit necessitatibus!</p>
+        </div>
+    </div>
+    <script src="./jQuery/jquery-3.6.1.min.js"></script>
+    <script>
+        $('#popup>button').click(function() {
+            // slideUp: 滑动收起 
+            // 参数2: 动画结束后的回调函数
+            // 收起来之后, 过去段时间再出来
+            
+            $(this).parent().slideUp(1000,function() {
+                // 定时器: 三秒后 再展开
+                // 这个this是 parent
+                setTimeout(() => {
+                    $(this).slideDown()
+                }, 3000);
+            })
+        })
+
+        // 初始隐藏
+        $('#dialog').hide()
+        setTimeout(() => {
+            $('#dialog').show()
+        }, 3000);{{{{}}}}
+    </script>
+</body>
+</html>

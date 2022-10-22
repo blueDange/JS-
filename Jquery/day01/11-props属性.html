@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>属性操作</title>
+</head>
+<body>
+    <!-- 属性分类 -->
+    <!-- 1.系统属性: 比如 href target -->
+    <!-- 自定义属性
+        旧方案: 随便写 - suibian
+        新方案: 用 data- 声明
+    -->
+
+    <a href="http://tmooc.cn" target="_blank" suibian="随便" data-x="88" data-x-y="11001"></a>
+    <script src="./jQuery/jquery-3.6.1.min.js"></script>
+    <script>
+        const $a = $('a')
+        console.log($a.prop('href'),$a.prop('target'));
+
+        // data- 声明的,用data方法
+        console.log($a.data('xY'));
+
+        // 通用方法: attr  读取所有方式声明的属性
+        console.log($a.attr('href'));
+        console.log($a.attr('data-x'));
+        console.log($a.attr('data-x-y'));
+        console.log($a.attr('suibian'));
+
+        // 修改
+        $a.prop('href','http://baidu.com')
+
+        // 自定义属性 修改
+        $a.attr('data-x',1000)
+    </script>
+</body>
+</html>

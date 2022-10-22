@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>video</title>
+</head>
+<body>
+    <!-- 用于播放视频,和img 一样 是多媒体组件 -->
+    <!-- <video width="200" height="400" src="../assets/video/11.mp4" controls autoplay loop></video> -->
+    <!-- 海豹帧 poster: 视频往往比较大,在加载期间可以设置封面 -->
+    <!-- 如果不设置海豹帧,则在视频加载器件是白屏状态,视频加载完毕后,会把视频的首帧作为封面 -->
+    <!-- preload: 预加载设定; 三个取值, none不加载 auto加载 metadata只加载元信息,例如视频长度 -->
+    <!-- 习惯赋值none,关闭预加载功能;节省用户的流量 -->
+    <!-- <video width="200" height="400" src="../assets/video/33.mp4" poster="../assets/img/index/44.jpg" controls preload="none"></video> -->
+    <video src="../assets/video/11.mp4" controls></video>
+    <div id="box">
+        <button>播放</button>
+        <button>暂停</button>
+        <button>静音</button>
+    </div>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+        
+    <script>
+        const $video = $('video')
+        console.log($video);
+
+        // 播放
+        $('#box>button').eq(0).click(function () {
+            // 触发 $video 的 play 方法
+            $video.trigger('play')
+        })
+
+        // 暂停
+        $('#box>button').eq(1).click(function () {
+            $video.trigger('pause')
+        })
+
+        // 静音
+        $('#box>button').eq(2).click(function() {
+            // 切换效果:改为反向值
+            const isMuted = $video.prop('muted')
+            $video.prop('muted',!isMuted)
+            // $video.prop('muted',true)
+
+        })
+    </script>
+
+</body>
+</html>

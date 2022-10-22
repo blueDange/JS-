@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>弹出菜单</title>
+        <link rel="stylesheet" href="./reset.css" />
+        <style>
+            #menu {
+                background-color: #f9f9fb;
+                border: 1px solid #aaa;
+                padding: 10px;
+                margin: 3px;
+                position: relative;
+            }
+            #menu > ul {
+                position: absolute;
+                background-color: #f9f9fb;
+                border: 1px solid #aaa;
+                top: calc(100% + 5px);
+                padding: 10px;
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="menu">
+            <button>中文</button>
+            <ul>
+                <li>English</li>
+                <li>日本语</li>
+                <li>韩语</li>
+                <li>蒙德语</li>
+            </ul>
+        </div>
+        <script src="./jQuery/jquery-3.6.1.min.js"></script>
+        <script>
+            $('#menu>button').click(function () {
+                // 下一个兄弟: next
+                $(this).next().toggle()
+            })
+        </script>
+    </body>
+</html>

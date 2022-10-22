@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>练习</title>
+        <link rel="stylesheet" href="./reset.css" />
+        <style>
+            ul {
+                background-color: #002c69;
+                width: 700px;
+                display: flex;
+            }
+            ul > li {
+                padding: 10px 20px;
+                color: #fff;
+                user-select: none;
+                cursor: pointer;
+            }
+            ul > li.active {
+                background-color: #ffa500;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li>首页</li>
+            <li>关于净美仕</li>
+            <li>公司动态</li>
+            <li>产品中心</li>
+            <li>练习我们</li>
+        </ul>
+        <script src="./jQuery/jquery-3.6.1.min.js"></script>
+        <script>
+            $('ul>li').mouseenter(function () {
+                $(this).addClass('active').siblings().removeClass('active')
+            })
+        </script>
+    </body>
+</html>

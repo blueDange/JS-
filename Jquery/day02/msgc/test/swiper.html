@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>swiper</title>
+        <link
+            rel="stylesheet"
+            href="../node_modules/swiper/swiper-bundle.min.css"
+        />
+
+        <style type="text/css">
+            .swiper {
+                --swiper-theme-color: #ff6600;
+                /* --swiper-pagination-color: #00ff33; */
+                /* 两种都可以 */
+                width: 1000px;
+                height: 400px;
+            }
+            .swiper-pagination-bullet {
+                width: 14px;
+                height: 14px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- swiper: 整个轮播图容器 -->
+        <!-- swiper-wrapper: 存放轮播图的容器 -->
+        <!-- swiper-slide: 存放每个轮播图的项目 -->
+
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img
+                        src="https://web.codeboy.com/xuezi/img/index/banner1.png"
+                        alt=""
+                    />
+                </div>
+                <div class="swiper-slide">
+                    <img
+                        src="https://web.codeboy.com/xuezi/img/index/banner2.png"
+                        alt=""
+                    />
+                </div>
+                <div class="swiper-slide">
+                    <img
+                        src="https://web.codeboy.com/xuezi/img/index/banner3.png"
+                        alt=""
+                    />
+                </div>
+                <div class="swiper-slide">
+                    <img
+                        src="https://web.codeboy.com/xuezi/img/index/banner4.png"
+                        alt=""
+                    />
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <!--分页器。如果放置在swiper外面，需要自定义样式。-->
+        </div>
+
+        <script src="../node_modules/swiper/swiper-bundle.min.js"></script>
+
+        <script text="text/javascript">
+            var mySwiper = new Swiper('.swiper', {
+                loop: true, // 是否循环滚动
+                // direction: 'vertical' // 纵向
+                // 特效: slide滑动 fade淡入 cube方块 cards卡片 filp翻转...
+                effect: 'cube',
+                autoplay: {
+                    delay: 2000, // 滚动间隔
+                    // 用户触摸后,是否要禁止自动滚动, 默认true;停止
+                    disableOnInteraction: false,
+                    // 鼠标进入时, 停止自动滚动
+                    pauseOnMouseEnter: true,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            })
+        </script>
+    </body>
+</html>

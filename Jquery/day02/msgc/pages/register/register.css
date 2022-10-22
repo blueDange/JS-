@@ -1,0 +1,67 @@
+#main {
+  background-color: #fae8c8;
+  height: calc(100vh - var(--header-height));
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 100px;
+}
+#main > div {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 50px 100px;
+  border-radius: 10px;
+  align-items: center;
+}
+#main > div > h2 {
+  margin-bottom: 20px;
+}
+#main > div > button {
+  background-color: var(--color-primary);
+  color: white;
+  width: 120px;
+  line-height: 34px;
+  font-size: 18px;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+#main > div > .agree {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+#main > div > .agree > a {
+  font-size: 1.1em;
+  color: var(--color-primary);
+  margin-left: 10px;
+}
+#main > div > .item {
+  display: flex;
+  flex-direction: column;
+  height: 60px;
+}
+#main > div > .item > span {
+  font-size: 13px;
+  display: none;
+}
+> #main > div > .item > span.err {
+  color: red;
+}
+> #main > div > .item > span.ok {
+  color: green;
+}
+#main > div > .item > input {
+  border: 2px solid gray;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 18px;
+  width: 350px;
+  transition: 0.2s;
+}
+#main > div > .item > input:focus {
+  border-color: #2e58ff;
+}
+#main > div > .item > input.err {
+  border-color: red;
+}/*# sourceMappingURL=register.css.map */

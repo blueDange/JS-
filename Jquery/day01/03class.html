@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>class操作</title>
+        <link rel="stylesheet" href="./reset.css" />
+        <style>
+            ul {
+                display: flex;
+            }
+            ul > li {
+                padding: 10px 20px;
+                user-select: none;
+            }
+            ul > li.active {
+                background-color: skyblue;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li>神里</li>
+            <li>申鹤</li>
+            <li>胡桃</li>
+            <li>心海</li>
+        </ul>
+        <script src="./jQuery/jquery-3.6.1.min.js"></script>
+        <script>
+            $('li').click(function () {
+                // $(this).addClass('active') // 添加
+                // $(this).toggleClass('active') // 切换
+
+                // 唯一性
+                // siblings : 兄弟姐妹们 -- 当前元素的所有兄弟元素
+                console.log($(this).siblings())
+                $(this).addClass('active').siblings().removeClass('active')
+            })
+        </script>
+    </body>
+</html>

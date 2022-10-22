@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li><input type="text" name="" id="" value="神里"></li>
+        <li>
+            <input type="text" name="" id="" value="申鹤">
+            <p>
+                <input type="text" name="" id="" value="申鹤2">
+                <input type="text" name="" id="" value="申鹤3">
+            </p>
+
+        </li>
+        <li><input type="text" name="" id="" value="胡桃"></li>
+    </ul>
+
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+
+    <script>
+        var $inp = $('li:eq(1)>input')
+        console.log($inp);
+
+        var $inp = $('li').eq(1).children('input')
+        console.log($inp);
+
+        // 找所有后代的写法
+        var $inp = $('li:eq(1) input') // 空格代表后代
+        console.log($inp);
+
+        // find: 查找后代元素
+        var $inp = $('li').eq(1).find('input')
+        console.log($inp)
+
+    </script>
+</body>
+
+</html>

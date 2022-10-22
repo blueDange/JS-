@@ -1,0 +1,84 @@
+/* base.css: 基础样式  -- 存放针对当前项目书写的公共样式 */
+:root {
+    /* 主题色 */
+    --color-primary: #f75148;
+    /* 内容宽度 */
+    --container-width: 1200px;
+    /* 头的高 */
+    /* 变量的好处: 如果有多处代码都使用了此高度,修改变量 就能实现一次修改 到处生效,   便于后期修改 */
+    --header-height: 80px;
+    /* 脚的高 */
+    --footer-height: 100px;
+}
+
+#header {
+  background-color: var(--color-primary);
+  height: var(--header-height);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  /* 定位方式的元素 常见层级 全局弹窗1000  头部栏 100   普通的10 */
+  z-index: 100;
+}
+body {
+    padding-top: var(--header-height);
+    /* 最小宽度 */
+    min-width: var(--container-width);
+}
+#footer{
+    height: var(--footer-height);
+    background-color: #222221;
+    
+}
+
+/* 滚动栏 */
+::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+}
+/* 滚动栏的轨道 */
+::-webkit-scrollbar-track{
+    background-color: #ddd9cf;
+}
+/* 滚动栏滑块 */
+::-webkit-scrollbar-thumb{
+    background-color: #b3aa94;
+    border-radius: 6px;
+}
+.breadcrumb {
+        padding: 10px 0;
+        /* background-color: #eee; */
+    }
+
+.hide {
+    display: none;
+}
+
+/* 两行 */
+.line-2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.nomore {
+            padding: 30px;
+            text-align: center;
+            font-size: 28px;
+            color: var(--color-primary);
+            display: none;
+        }
+
+/* 配合精灵图使用 */
+i {
+    display: inline-block;
+}
+
+/* 一行 */
+.line-1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

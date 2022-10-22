@@ -1,0 +1,55 @@
+#main {
+  width: var(--container-width);
+  margin: 0 auto;
+}
+#main .list {
+  display: flex;
+  position: relative;
+}
+#main .list .list-item {
+  position: absolute;
+  overflow: hidden;
+  box-shadow: 0 0 2px 2px gray;
+  width: calc((100% - 30px) / 4);
+  border-radius: 8px;
+}
+#main .list .list-item:nth-child(4n) {
+  margin-right: 0;
+}
+#main .list .list-item > img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+#main .list .list-item > div {
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px;
+}
+#main .list .list-item > div > p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+#main .list .list-item > div > div {
+  display: flex;
+}
+#main .list .list-item > div > div > i img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+#main .list .list-item > div > div > div {
+  display: flex;
+  justify-content: space-between;
+}
+#main .list .list-item > div > div > div > span:first-of-type {
+  float: left;
+}
+#main .list .list-item > div > div > div > span:last-child {
+  text-align: end;
+}/*# sourceMappingURL=note.css.map */
