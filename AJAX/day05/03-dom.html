@@ -1,12 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dom</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dom</title>
 </head>
+
 <body>
-    
+    <div id="box">
+        <button>登录</button>
+    </div>
+
+    <script>
+        // 传统方案；书写html -> 浏览器自动解析成DOM 元素 -> 展示到页面
+        // 现在： 绕开html ，直接用JS代码来创造DOM元素 -> 展示到页面
+        const box = document.getElementById('box')
+        //创建一个button 标签
+        // createElement（标签名）
+        var btn1 = document.createElement('button')
+        btn1.innerHTML = '注册'
+        // appendChild ：添加 子元素
+        box.appendChild(btn1)
+        // HTML方式：费浏览器 省程序员
+        // DOM 方式：省浏览器 费程序员 -- 提速
+        //  -- React 框架 ：采用此方案提高网页速度 ，目前世界最快的框架
+
+        // 场景 ：音频标签 - 不需要显示在页面上 ，用DOM更合适
+        // 因为音频标签经常用DOM方式创建，所以官方直接提供对应的构造函数
+        var au = new Audio()
+        au.src = 'https://game.gtimg.cn/images/lol/act/img/vo/choose/18.ogg'
+        au.preload = 'none'
+        btn1.onclick = function () {
+            au.play()
+        }
+
+      // 用DOM方式：创建1个暂停按钮 ，加入到box里，点击后能够暂停音频
+        var btn2 = document.createElement('button')
+        btn2.innerHTML = '暂停'
+        box.appendChild(btn2)
+        btn2.onclick = function() {
+            au.pause()
+        }
+    </script>
 </body>
+
 </html>
