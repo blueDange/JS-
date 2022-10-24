@@ -73,6 +73,40 @@
                         
                     }
 
+                    // 头像
+                    &.head-photo {
+                        > div {
+
+                            > img {
+                                border-radius: 50%;
+                                width: 60px;
+                                margin-bottom: 10px;
+                            }
+                            > button {
+                                background-color: var(--color-primary);
+                                border-radius: 5px;
+                                width: 80px;
+                                height: 30px;
+                                color: #fff;
+                            }
+                        }
+
+                        > ul {
+                            display: flex;
+                            flex-wrap: wrap;
+                            height: 300px;
+                            // y轴超出部分,滚动展示
+                            overflow-y: scroll;
+
+
+                            img {
+                                width: 60px;
+                                padding-right: 2px;
+                                padding-bottom: 2px;
+                            }
+                        }
+                    }
+
                     &:last-child {
                         button {
                             background-color: var(--color-primary);

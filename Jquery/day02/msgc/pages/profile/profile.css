@@ -60,6 +60,29 @@
 #main > div > div#content > div:first-child tr td:nth-child(1) {
   width: 100px;
 }
+#main > div > div#content > div.head-photo > div > img {
+  border-radius: 50%;
+  width: 60px;
+  margin-bottom: 10px;
+}
+#main > div > div#content > div.head-photo > div > button {
+  background-color: var(--color-primary);
+  border-radius: 5px;
+  width: 80px;
+  height: 30px;
+  color: #fff;
+}
+#main > div > div#content > div.head-photo > ul {
+  display: flex;
+  flex-wrap: wrap;
+  height: 300px;
+  overflow-y: scroll;
+}
+#main > div > div#content > div.head-photo > ul img {
+  width: 60px;
+  padding-right: 2px;
+  padding-bottom: 2px;
+}
 #main > div > div#content > div:last-child button {
   background-color: var(--color-primary);
   width: 130px;

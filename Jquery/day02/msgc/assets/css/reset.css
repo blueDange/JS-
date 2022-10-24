@@ -37,3 +37,11 @@ input {
 table {
     border-collapse: collapse;
 }
+
+/* 重置分割线 */
+hr {
+    border: none;
+    background-color: rgba(64, 61, 61, 0.208);
+    height: 1px;
+    margin: 10px 0;
+}
