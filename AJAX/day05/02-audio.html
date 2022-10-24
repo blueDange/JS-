@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音频 audio </title>
+</head>
+<body>
+    <!-- audio标签: 负责音频播放 -->
+    <!-- src:音频文件地址 -->
+    <!-- controls:显示控制面板 -->
+    <!-- autoplay: 自动播放 -->
+    <!-- loop:循环 -->
+    <!-- preload="auto/none/metadata" 预加载
+        - auto 不同浏览器设置不同
+        - none 不预加载 , 播放时临时加载, 节省用户流量
+        - metadata 只加载音频信息,不含音频本身,例如音频时长之类的
+    -->
+    <!-- <audio src="https://game.gtimg.cn/images/lol/act/img/vo/choose/157.ogg" autoplay controls preload="auto"></audio> -->
+
+    <audio src="https://game.gtimg.cn/images/lol/act/img/vo/choose/157.ogg" id="au1" autoplay controls preload="auto"></audio>
+    <button onclick="play()">播放</button>
+    <button onclick="pause()">暂停</button>
+    <script>
+        // 利用按钮来控制 audio 元素的操作
+        const au1 = document.getElementById('au1')
+
+        function play() {
+            au1.play()  // 音频的play方法,用于播放音频
+        }
+
+        function pause() {
+            au1.pause() // 音频pause方法,用于音频暂停
+        }
+
+        var url = 'http://serverms.xin88.top/users/head_photos'
+        var xhr = new XMLHttpRequest()
+        xhr.open('get',url)
+        xhr.send()
+        xhr.onload = function() {
+            var data = JSON.parse(xhr.response)
+            console.log(data)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>斗鱼</title>
+  </head>
+  <body>
+    <script>
+      // var url = 'https://m.douyu.com/api/room/list?page=1&type=yz'
+      // 访问代理服务器
+      // var url = 'http://localhost:3000/douyu/api/room/list?page=1&type=yz'
+
+      var url =
+        'http://localhost:8000/bilibili/pgc/operation/api/static?position_id=586'
+
+      var xhr = new XMLHttpRequest()
+      xhr.open('GET', url)
+      xhr.send()
+      xhr.onload = function () {
+        var data = JSON.parse(xhr.response)
+        console.log('data', data)
+      }
+    </script>
+  </body>
+</html>
