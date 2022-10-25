@@ -27,7 +27,7 @@
         const c = document.getElementById('my-canvas')
         const ctx = c.getContext('2d')
 
-        data.forEach( (item,index) => {
+        data.forEach((item, index) => {
             const { value, color } = item
             // 设置填充色
             ctx.fillStyle = color
@@ -35,7 +35,7 @@
             // 序号 * (每个宽 + 间距宽) + 初始
             var x = index * (30 + 10) + 10
             var y = 300 - value
-            ctx.fillRect(x, y,30,value)
+            ctx.fillRect(x, y, 30, value)
         })
 
     </script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>渐变</title>
+</head>
+
+<body>
+    <canvas id="my-canvas" width="300" height="300" style="border: 1px solid green;"></canvas>
+    <script>
+        /** @type{HTMLCanvasElement} **/
+        const c = document.getElementById('my-canvas')
+        var ctx = c.getContext('2d')
+
+        // 渐变色:
+        // 4个参数
+        // 起始坐标: x,y
+        // 结束坐标: x,y
+        var co = ctx.createConicGradient(0, 0, 0, 200)
+        // 类似透明度: 从0~1 过度,渐变的进度
+        // 为进度 添加结束时的 颜色
+        co.addColorStop(0, 'black')  // 起始-黑色
+        co.addColorStop(0.3, 'green')  // 起始-黑色
+        co.addColorStop(0.5, 'pink')  // 起始-黑色
+        co.addColorStop(0.7, 'skyblue')  // 起始-黑色
+
+        co.addColorStop(1, 'white')  // 结束-白色
+        ctx.fillStyle = co
+        ctx.fillRect(0, 30, 250, 200)
+    </script>
+</body>
+
+</html>
