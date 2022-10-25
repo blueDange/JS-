@@ -1,22 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>文本</title>
 </head>
-<body>
-   <script>
-    /** @type{HTMLCanvasElement} **/
-    var c = document.getElementById('my-canvas')
-    var ctx = c.getContext('2d')
 
-    // 设置字体大小和 字体等...
-    ctx.font= '20px 微软雅黑'
-    // 参数1: 文本
-    // 参数2和3: 文字左下角的图标
-    ctx.fillText('Hello world!',0,20)
-   </script> 
+<body>
+    <canvas id="my-canvas" width="300" height="300" style="border: 1px solid green;"></canvas>
+
+    <script>
+        /** @type{HTMLCanvasElement} **/
+        var c = document.getElementById('my-canvas')
+        var ctx = c.getContext('2d')
+
+        var co = ctx.createConicGradient(0, 0, 100, 50)
+        co.addColorStop(0, 'blue')
+        co.addColorStop(0.3, 'green')
+        co.addColorStop(0.4, 'pink')
+
+        ctx.strokeStyle = co
+        ctx.fillStyle = co
+
+        // 设置字体大小和 字体等...
+        ctx.font = '20px 微软雅黑'
+        // 参数1: 文本
+        // 参数2和3: 文字左下角的图标
+        ctx.fillText('Hello world!', 0, 20)
+
+        ctx.font = '30px 宋体'
+        ctx.strokeText('你好, 世界!', 0, 150)
+    </script>
 </body>
+
 </html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弧形</title>
+</head>
+
+<body>
+    <canvas id="my-canvas" width="400" height="400" style="border: 2px solid pink;"></canvas>
+    <script>
+        /** @type{HTMLCanvasElement} **/
+        var c = document.getElementById('my-canvas');
+        var ctx = c.getContext('2d');
+
+        // 参数顺序: 圆心x 圆心y 半径 起始弧度
+        ctx.arc(100, 100, 50, 99, Math.PI / 2)  // 1π = 180°
+        ctx.lineTo(100, 50)
+
+        ctx.stroke()
+
+        ctx.fillStyle = 'blue';
+        ctx.fill()
+
+        // 画线: 选择七点 -> 画线 -> 填充
+        ctx.moveTo(10, 10)  // 坐标10,10
+        ctx.lineTo(100, 10)  // 把线移动到
+        ctx.stroke()
+
+        ctx.moveTo(10, 100)  // 坐标10,10
+        ctx.lineTo(100, 10)  // 把线移动到
+        ctx.stroke()
+
+        ctx.moveTo(10, 10)  // 坐标10,10
+        ctx.lineTo(10, 100)  // 把线移动到
+        ctx.stroke()
+    </script>
+</body>
+
+</html>
