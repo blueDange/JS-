@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>多文件-拖拽上传</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 300px;
+            background-color: #ccc;
+            overflow: auto;
+        }
+    </style>
+
+<body>
+    <div id="box"></div>
+    <button>上传</button>
+    <script src="./jquery.min.js"></script>
+    <script>
+        let files = null
+        $('#box').on('dragover', function (e) {
+            e.preventDefault() // 阻止默认操作  -- 不允许降落
+        }).on('drop', function (e) {
+            e.preventDefault()  // 阻止默认的拒绝操作
+            // 默认会在新标签中打开图片
+            files = e.originalEvent.dataTransfer.files
+            console.log(files)
+            // 观察发现, files的原型是 FileList, 其中没有forEach方法
+            // 所以只能用 for...of 来遍历
+            $('#box').empty()  // 先清空, 防止多次操作累加
+            for (const file of files) {
+                $('#box').append(`<div>${file.name}</div>`)
+            }
+        })
+
+        $('#box+button').click(function() {
+            var fd = new FormData()
+            for (const file of files) {
+                fd.append('photos',file)
+            }
+            $.ajax({
+            url: 'http://localhost:3000/upload_duo',
+            type: 'post',
+            processData:false,
+            contentType:false,
+            data:fd,
+            success(res) {
+                console.log(res)
+            }
+        })
+        })
+
+        
+    </script>
+</body>
+
+</html>

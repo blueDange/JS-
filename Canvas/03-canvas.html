@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas</title>
+</head>
+
+<body>
+    <canvas id="my-canvas" width="300" height="300" style="border: 2px solid green;"></canvas>
+    <script>
+
+        var data = [
+            { color: '#888', value: 180 },
+            { color: '#989892', value: 280 },
+            { color: '#325511', value: 90 },
+            { color: '#ff1', value: 10 },
+            { color: '#aa2', value: 30 },
+            { color: '#bbdd22', value: 40 },
+            { color: '#bbddaa', value: 90 },
+        ]
+
+        // 获取画布
+        /** @type{HTMLCanvasElement} **/
+        const c = document.getElementById('my-canvas')
+        const ctx = c.getContext('2d')
+
+        data.forEach( (item,index) => {
+            const { value, color } = item
+            // 设置填充色
+            ctx.fillStyle = color
+
+            // 序号 * (每个宽 + 间距宽) + 初始
+            var x = index * (30 + 10) + 10
+            var y = 300 - value
+            ctx.fillRect(x, y,30,value)
+        })
+
+    </script>
+
+</body>
+
+</html>
