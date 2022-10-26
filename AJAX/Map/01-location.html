@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- HTML5 提供的API, 可以获取用户的地理位置坐标 -->
+    <!-- 在手机端比较好用,受限于硬件-大多数pc没有定位功能 -->
+    <script>
+        // navigator 属于 BOM 的一个API
+        // BOM: Browser Object Model  - 浏览器对象模型
+        // -- 包含很多操作浏览器功能的API
+        // navigator: 包含各种浏览器的信息 和 功能 API
+        console.log(navigator)
+        // language: 代表用户的系统语言
+        // online: 代表设备是否联网
+        // platform: 代表设备的操作系统
+        // geolocation: 获取用户经纬度定位信息
+
+        // getCurrentPosition: 获取最新的定位信息
+        // 参数1: 成功后的回调
+        // 参数2: 失败后的回调
+        // 参数3: 更多的配置, 例如 timeout 代表超时时长
+        navigator.geolocation.getCurrentPosition(
+            res => console.log('成功', res),
+            err => console.log('失败', err),
+            { timeout: 5000 }
+        )
+    </script>
+</body>
+
+</html>
