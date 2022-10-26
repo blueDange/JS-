@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVG交互</title>
+    <style>
+        #svg_4 {
+            animation: rotate 3s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+
+        <g>
+
+            <title>Layer 1</title>
+
+            <ellipse ry="60" rx="60.5" id="svg_1" cy="77.44444" cx="334.83333" stroke="#000" fill="#fff" />
+
+            <path id="svg_4"
+                d="m290.65559,74.93611l0,0c0,-9.38884 6.93959,-17 15.50001,-17l0,0c4.11086,0 8.05335,1.79107 10.96016,4.97918c2.90682,3.18812 4.53985,7.51213 4.53985,12.02082l0,0c0,9.38884 -6.93959,17 -15.50001,17l0,0c-8.56042,0 -15.50001,-7.61116 -15.50001,-17zm7.75001,0l0,0c0,4.69442 3.4698,8.5 7.75001,8.5c4.28021,0 7.75001,-3.80558 7.75001,-8.5c0,-4.69442 -3.4698,-8.5 -7.75001,-8.5l0,0c-4.28021,0 -7.75001,3.80558 -7.75001,8.5z"
+                stroke="#000" fill="#20d6d6" />
+
+            <path id="svg_5"
+                d="m341.28999,75.48889l0,0c0,-9.38884 8.28273,-17 18.49999,-17l0,0c4.9065,0 9.61205,1.79107 13.08146,4.97918c3.46942,3.18812 5.41852,7.51213 5.41852,12.02082l0,0c0,9.38884 -8.28273,17 -18.49999,17l0,0c-10.21726,0 -18.49999,-7.61116 -18.49999,-17zm9.24999,0l0,0c0,4.69442 4.14137,8.5 9.24999,8.5c5.10863,0 9.24999,-3.80558 9.24999,-8.5c0,-4.69442 -4.14136,-8.5 -9.24999,-8.5l0,0c-5.10863,0 -9.24999,3.80558 -9.24999,8.5z"
+                stroke="#000" fill="#20d6d6" />
+
+            <rect id="svg_11" height="171" width="142" y="140.77778" x="258" stroke="#000" fill="#ffffff" />
+
+            <line stroke="#000" stroke-width="12" id="svg_13" y2="286.77779" x2="200" y1="169.77779" x1="254"
+                fill="none" />
+
+            <line id="svg_14" y2="292" x2="481" y1="165" x1="404" stroke-width="12" stroke="#000" fill="none" />
+
+            <line stroke-width="23" id="svg_15" y2="476" x2="285" y1="312" x1="295" stroke="#000" fill="none" />
+
+            <line id="svg_16" y2="344" x2="295" y1="394" x1="276" stroke="#000" fill="none" />
+
+            <line id="svg_17" y2="483" x2="385" y1="312" x1="356" stroke-width="23" stroke="#000" fill="none" />
+
+            <path stroke="#C48157" id="svg_20" d="m237.65501,49.07313l98.00001,-40l98.00001,40l-196.00002,0z"
+                stroke-width="5" fill="#C48157" />
+
+            <path id="svg_22" d="m310.455,108.94697l42.99997,0l0,8l-42.99997,0l0,-8z" stroke-width="5" stroke="#E6C36A"
+                fill="#000000" />
+
+        </g>
+    </svg>
+
+    <script>
+        var svg20 = document.getElementById("svg_20");
+        svg20.onclick = function () {
+            this.style.fill = "green";
+            this.style.stroke = 'green'
+        }
+
+    </script>
+</body>
+
+</html>
