@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>defineProperty</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+        var emp = {
+            ename: '神里',
+            age: 18, // 年龄 1~ 120
+            eid: '1001',  // 编号不可修改
+            salary: 20000,  // 工资不想被遍历
+            hubby: 'blue'
+        }
+
+        // defineProperty : 可以为对象的每个属性 单独配置
+        // 配置单个属性
+        // 参数1: 对象 参数2: 属性名 参数3: 配置项
+        Object.defineProperty(emp, 'eid', {
+            writable: false, // 是否可写入新的值
+        });
+        Object.defineProperty(emp, 'salary', {
+            enumerable: false, // 是否可以被枚举
+        });
+        Object.defineProperty(emp, 'hubby', {
+            configurable: false, // 是否可修改其他配置
+        });
+        emp.age = 17  //
+        emp.eid = '1002'  // 唯一标识不能修改
+        delete emp.hubby;
+
+        for (const key in emp) {
+            console.log(key, emp[key])
+        }
+    </script>
+</body>
+
+</html>

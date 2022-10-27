@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>await 与 async</title>
+</head>
+
+<body>
+    <!-- await 和  async 是ES6 提供的语法糖,进一步优化格式 -->
+    <script src="./axios.js"></script>
+    <script>
+        var url1 = 'https://api.xin88.top/douban/movies.json'
+        var url2 = 'https://api.xin88.top/game/heros.json'
+        var url3 = 'https://api.xin88.top/game/items.json'
+
+
+        // async: 异步
+        // 代表: getData 函数中的所有代码,均异步执行
+        async function getData() {
+            // await:等待
+            // await 必须/只能在 async 修饰的函数中书写
+            // 等待此行代码执行完毕,才能执行后续代码
+            // res1 中存储的就是 promise对象中 resolve传递出来的数据
+            // 即之前 .then(res => {}) 中的 res值
+            // 目标: 把.then 这种链式语法, 修改成普通的同步函数模式
+
+            // 可以利用 try...catch 语法来抓取报错
+            try {
+                var res1 = await axios.get(url1);
+                console.log(res1)
+
+                var res2 = await axios.get(url2);
+                console.log(res2)
+
+                var res3 = await axios.get(url3)
+                console.log(res3)
+            } catch (err) {
+                console.log(err)
+            }
+
+        }
+
+        getData()
+    </script>
+</body>
+
+</html>
