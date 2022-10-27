@@ -9,6 +9,37 @@
 </head>
 
 <body>
+    <ul id="chatbox"></ul>
+    <button id="btn1">今年的花会开吗?</button>
+
+    <script src="./socket.io.js"></script>
+    <script>
+        // 前端操作3件事
+        // 1. 用 io 方法搭建与 socket 服务器的长链接, 返回链接对象
+        // 2. 接消息: 利用 on 方法来监听给指定名称的信息
+        // 3. 发消息: 利用emit 方法发送指定名称的信息
+
+        // 1. 用socket.io 来搭建长链接  -> 聊天服务器
+        const socket = io('http://chat.xin88.top')
+
+        btn1.onclick = () => {
+            // emit: 用于发消息给对方
+            // 参数1: 消息的类型名 --  服务器端会直接监听
+            // -- 这里必须与服务器开发人员沟通,类似接口名的概念
+            socket.emit('msg', '喵桑,今年的花会开得啦!')
+        }
+
+        // 监听服务器发过来的回复信息
+        socket.on('notice', data => {
+            alert(data.toString())
+        })
+
+        // 2.监听服务器发送的消息
+        socket.on('ad', data => {
+            console.log(data)
+            chatbox.innerHTML += `<li>${data}</li>`
+        })
+    </script>
 
 </body>
 

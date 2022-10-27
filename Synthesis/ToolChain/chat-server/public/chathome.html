@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>聊天室</title>
+    <style>
+        body,
+        ul,
+        li,
+        h3 {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        #chatbox {
+            width: 1000px;
+            margin: 0 auto;
+            background-color: #bbb;
+            padding: 5px;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+
+        #chatbox>ul {
+            padding: 10px;
+            background-color: #fff;
+            height: 600px;
+            overflow: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #chatbox>ul>li {
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #chatbox>ul>li>span {
+            background-color: #abe979;
+            padding: 5px 10px;
+            border-radius: 9px;
+        }
+
+        #chatbox>ul img {
+            max-width: 50%;
+            display: block;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="chatbox">
+        <p></p>
+        <ul id="box">
+            <!-- <li>
+                <h3>名字</h3>
+                <span>信息</span>
+            </li> -->
+        </ul>
+
+        <div>
+            <input type="text" name="" id="content" />
+            <button>发送</button>
+        </div>
+    </div>
+
+    <script src="./socket.io.js"></script>
+    <script>
+        // 群聊: 每个人都可以与服务器关联,然后发消息
+        // 服务器把你发送的消息,转发给每个关联的用户
+        const socket = io('http://chathome.xin88.top')
+
+        // 发: emit
+        const inp = document.querySelector('input')
+        const btn = inp.nextElementSibling
+        btn.onclick = () => {
+            // 参数2: 支持 字符串 或 对象类型
+            socket.emit('msg', {
+                uname: '神里凌华',
+                content: inp.value,
+
+            })
+            inp.value = '' // 清空输入框, 方便下次发
+        }
+
+        // 接: on
+        const box = document.getElementById('box')
+        socket.on('msg', data => {
+            box.innerHTML += `
+                <li>
+                    <h3>${data.uname}</h3>
+                    <span>${data.content}</span>
+                </li>
+                `
+
+            // 自动滚动到最下方
+            // scrollTop: 内容偏移量距离顶部的距离
+            // scrollHeight: 可以滚动的最大宽度
+            // box.scrollTop = box.scrollHeight - 200
+        })
+
+        // 监听事件
+        socket.on('count_change', data => {
+            const p = document.querySelector('#chatbox>p')
+            p.innerHTML = '在线人数' + data
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试</title>
+</head>
+
+<body>
+    <h3>本次谈话结束,请打分</h3>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <button>5</button>
+    <script src="./socket.io.js"></script>
+    <script>
+        const socket = io('http://localhost:3000')
+
+        const btns = document.querySelectorAll('button')
+        btns.forEach(btn => (btn.onclick = function () {
+            // emit: 发送
+            // 参数1: 消息名  参数2: 消息体
+            socket.emit('score', this.innerHTML)
+        }));
+
+        socket.on("feedback", (data) => {
+            alert(data);
+        });
+
+        // 参数1: 服务器发送的消息名
+        // 参数2: 收到消息体, 回调
+        socket.on('suiBian', data => {
+            console.log(data)
+        })
+
+
+    </script>
+</body>
+
+</html>
