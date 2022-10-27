@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webworker</title>
+</head>
+
+<body>
+    <p id="p1"></p>
+    <button id="btn1">执行耗时操作 1</button>
+
+    <button id="btn2">用webworker执行 2</button>
+
+    <button id="btn3">带有反馈信息的worker 3</button>
+
+    <ul id="box"></ul>
+
+    <script>
+        let worker = new Worker('./11.js') //初始化1个骑手对象
+
+        // 监听 worker 发送回来的信息
+        worker.onmessage = function (e) {
+            console.log('来自骑手的信息:', e);
+            const { x, name, msg } = e.data
+            box.innerHTML = `<li>${name}</li>
+                      <li>${x}</li>
+                      <li>${msg}</li>`
+        }
+
+        btn3.onclick = function () {
+            // 点击按钮后, 通知骑手
+            worker.postMessage({
+                name: "黄焖鸡",
+                tips: '少放土豆 多放鸡肉 谢谢!  不给就投诉 -- 世宇留',
+                address: "石家庄xxx中心2楼 wc第二间"
+            })
+        }
+
+
+
+        // webworker: 类似于开启了一个新的网页, 来执行任务 -- 就不会卡死当前网页的执行
+        btn2.onclick = function () {
+            // 耗时操作代码: 存放在单独的 js 文件中
+            // 创建1个 worker 对象, 去完成耗时操作, 不影响当前页面执行
+            // 世宇拿手机 找了个 美团跑腿 帮着买东西,  不耽误自己蹲坑..
+            let worker = new Worker('./10.js')
+        }
+
+        // 升级: 
+
+
+
+        // 递归操作可以模拟耗时操作
+        function fb(n) {
+            return n < 3 ? 1 : fb(n - 1) + fb(n - 2)
+        }
+
+        btn1.onclick = function () {
+            var x = fb(45)
+            console.log('x:', x);
+        }
+
+
+        var p1 = document.getElementById('p1')
+
+        setInterval(() => {
+            p1.innerHTML = new Date().toLocaleTimeString()
+        }, 1000);
+    </script>
+</body>
+
+</html>
