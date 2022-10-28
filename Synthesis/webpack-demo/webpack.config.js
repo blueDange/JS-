@@ -1,6 +1,7 @@
 // 导出配置
 // webpack.config.js
 
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')  // 路径管理模块
 
 module.exports = {
@@ -18,4 +19,10 @@ module.exports = {
     // 当前的开发模式,不设置的话, 打包会有警告,
     // node代表暂时忽略,其它选项可以看官方文档配置的
     mode: 'none',
+    // 插件: 为webpack提供额外的功能
+    plugins: [
+        // 自动生成index.html 的插件: html-webpack-plugin
+        // 先安装: npm i html-webpack-plugin
+        new HtmlWebpackPlugin(),
+    ],
 }
