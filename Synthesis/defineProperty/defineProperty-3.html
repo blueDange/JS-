@@ -21,8 +21,11 @@
         Object.defineProperties(emp, {
             age: { writables: false }, // 不可修改
             salary: { enumerables: false },  // 不可枚举
-            hubby: { configurable: false } // 不可删除
+            hubby: { configurable: false }, // 不可删除
+            // 改值
+            ename: { value: '申鹤' }
         });
+        console.log(emp)
 
     </script>
 </body>

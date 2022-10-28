@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>属性监听</title>
+</head>
+
+<body>
+    <!-- <script>
+        var sl = { uname: '神里绫华', age: 18 }
+
+        Object.defineProperty(sl, '_age', {
+            // 初始值,是 之前的age值
+            value: sl.age,
+            // 用 define方式新增的 _age属性,默认权限都是关闭的
+            // 所以_age 会无法赋值, 必须手动改成可以赋值的
+            writable: true
+        })
+
+        // 赋值监听:监听一个属性的赋值操作
+        Object.defineProperty(sl, 'age', {
+            get() { return this._age; },
+            set(value) {
+                console.log('value', value)
+                // this.age = value  // 会无限循环
+                // 检查复制的合理性
+                if (value > 0 && value < 150) {
+                    this._age = value
+                } else {
+                    throw new Error('age赋值错误' + value)
+                }
+            }
+        })
+
+        // 年龄不合理啊 
+        sl.age = 100
+
+        // 没用小括号会触发计算属性
+        console.log(sl.age)
+
+        console.log(sl)
+
+    </script> -->
+
+
+    <!-- <script>
+        var emp = {
+            uname: '申鹤',
+            salary: 20000,
+        }
+        Object.defineProperties(emp, {
+            salary: {
+                get() { return this._salary },
+                set(value) {
+                    if (value >= 0 && typeof value == 'number') {
+
+                    } else {
+                        throw new Error('你奶奶个腿' + value)
+                    }
+                }
+            },
+
+            _salary: {
+                value: emp.salary,
+                writable: true,  // 可复制
+            }
+        })
+
+        // emp.salary = -1000   // 报错
+        // emp.salary = '额贼'  // 报错
+        emp.salary = 10000
+
+        console.log(emp.salary)
+    </script> -->
+
+    <script>
+        var lz = {
+            uname: '申鹤',
+            phone: '18792704099',
+        }
+
+        Object.defineProperties(lz, {
+            phone: {
+                get() { return this._phone },
+                set(value) {
+                    if (/^1[3-9]\d{9}$/.test(value) && typeof value == 'string') {
+                    } else {
+                        throw new Error('你奶奶滴' + value)
+                    }
+                },
+            },
+            _phone: {
+                value: lz.phone,
+                writable: true
+            }
+        })
+
+        // lz.phone = '110'
+        // lz.phone = '好太太'
+        lz.phone = '13087569274'
+
+        console.log(lz.phone)
+    </script>
+</body>
+
+</html>
