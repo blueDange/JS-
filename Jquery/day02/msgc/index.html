@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,10 +22,11 @@
     <!-- 引入标签栏图片 -->
     <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
 </head>
+
 <body>
     <!-- 访问服务器地址时,不指定文件名, 则自动访问index.html文件 -->
 
-    
+
     <div id="header"></div>
 
 
@@ -44,11 +46,12 @@
         const params = new URLSearchParams(location.search)
         const page = params.get('page') || 'home'
         // const page = Q.search('page') || 'home'
-        console.log('page',page)
+        console.log('page', page)
 
         // 假设 note 页面,路径是 ./pages/note/note.html
         $('#container').load(`./pages/${page}/${page}.html`)
         // $('#container').load(`./pages/${page}/${page}.html`)
     </script>
 </body>
+
 </html>

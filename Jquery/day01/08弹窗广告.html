@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,16 +15,18 @@
             padding: 10px;
             background-color: #eee;
         }
+
         #dialog {
             position: fixed;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,.3);
+            background-color: rgba(0, 0, 0, .3);
             z-index: 1000;
             display: flex;
             justify-content: center;
             align-items: center;
         }
+
         #dialog>div {
             width: 300px;
             padding: 10px;
@@ -32,6 +35,7 @@
         }
     </style>
 </head>
+
 <body>
     <div id="popup">
         <button>关闭</button>
@@ -43,17 +47,19 @@
     <div id="dialog">
         <div>
             <button>x</button>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro quidem, cumque earum blanditiis eius error magnam totam culpa! Nesciunt, ratione repellendus! Enim totam soluta sunt minus consequatur labore velit necessitatibus!</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro quidem, cumque earum blanditiis eius
+                error magnam totam culpa! Nesciunt, ratione repellendus! Enim totam soluta sunt minus consequatur labore
+                velit necessitatibus!</p>
         </div>
     </div>
     <script src="./jQuery/jquery-3.6.1.min.js"></script>
     <script>
-        $('#popup>button').click(function() {
+        $('#popup>button').click(function () {
             // slideUp: 滑动收起 
             // 参数2: 动画结束后的回调函数
             // 收起来之后, 过去段时间再出来
-            
-            $(this).parent().slideUp(1000,function() {
+
+            $(this).parent().slideUp(1000, function () {
                 // 定时器: 三秒后 再展开
                 // 这个this是 parent
                 setTimeout(() => {
@@ -66,7 +72,8 @@
         $('#dialog').hide()
         setTimeout(() => {
             $('#dialog').show()
-        }, 3000);{{{{}}}}
+        }, 3000);
     </script>
 </body>
+
 </html>

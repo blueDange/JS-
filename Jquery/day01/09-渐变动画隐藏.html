@@ -50,30 +50,30 @@
         <div>
 
 
-            <img src="./imgs/smallskin-1.jpg" alt="">
-            <img src="./imgs/smallskin-2.jpg" alt="">
-            <img src="./imgs/smallskin-3.jpg" alt="">
-            <img src="./imgs/smallskin-4.jpg" alt="">
-            <img src="./imgs/smallskin-5.jpg" alt="">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>5</button>
         </div>
     </div>
     <script src="./jQuery/jquery-3.6.1.min.js"></script>
     <script>
-        $('#box>div:last-child>img').mouseenter(function () {
+        $('#box>div:last-child>button').mouseenter(function () {
             $(this).addClass('active').siblings().removeClass('active')
 
             //
-        // index(): 获取元素, 在兄弟们中的序号
-        const i = $(this).index()
-        console.log(i);
-        // 根据当前序号,获取对应的大图,让其显示
-        // $imgs.eq(i).show().siblings().hide()
-        // fade:  -- 通过透明度效果来隐藏和显示
-        // in: 渐入-显示  out:渐出 - 隐藏
-        $imgs.eq(i).stop().fadeIn().siblings().fadeOut()
+            // index(): 获取元素, 在兄弟们中的序号
+            const i = $(this).index()
+            console.log(i);
+            // 根据当前序号,获取对应的大图,让其显示
+            // $imgs.eq(i).show().siblings().hide()
+            // fade:  -- 通过透明度效果来隐藏和显示
+            // in: 渐入-显示  out:渐出 - 隐藏
+            $imgs.eq(i).stop().fadeIn().siblings().fadeOut()
         })
-        
-        
+
+
 
         // 初始化状态,让第一张图显示,其他隐藏
         // 规范: 如果JQ对象,则推荐,变量名用$开头,见名知意

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,19 +8,22 @@
     <title>练习</title>
     <link rel="stylesheet" href="./reset.css">
     <style>
-        #box> div {
+        #box>div {
             display: flex;
         }
+
         #box>div>img {
             border: 2px solid #ccc;
             margin: 20px 5px;
             width: 70px;
         }
+
         #box>div>img.active {
             border-color: red;
         }
     </style>
 </head>
+
 <body>
     <div id="box">
         <img src="./imgs/1_lg.jpg" alt="">
@@ -33,7 +37,7 @@
     </div>
     <script src="./jQuery/jquery-3.6.1.min.js"></script>
     <script>
-        $('#box>div>img').mouseenter(function() {
+        $('#box>div>img').mouseenter(function () {
             $(this).addClass('active').siblings().removeClass('active')
 
             // 自定义属性 data-lg 用data方法
@@ -41,8 +45,9 @@
             console.log(lg);
 
             // 设置给 大图的src属性  -- 系统属性用prop
-            $('#box>img').prop('src',lg)
+            $('#box>img').prop('src', lg)
         })
     </script>
 </body>
+
 </html>
